@@ -22,7 +22,7 @@ The Iris dataset is a classic dataset in the field of machine learning. This pro
 Clone the repository and install the required libraries:
 
 ''' bash
-git clone https://github.com/yourusername/Iris-Classification.git
+git clone https://github.com/chandkund/Iris-Classification.git
 cd Iris-Classification
 pip install -r requirements.txt
 
