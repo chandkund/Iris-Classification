@@ -19,30 +19,62 @@ The Iris dataset is a classic dataset in the field of machine learning. This pro
 
 ## Installation
 Clone the repository and install the required libraries:
+```bash
+git clone https://github.com/chandkund/Iris-Classification.git
+cd Iris-Classification
+```
+```python
+pip install pandas numpy matplotlib seaborn scikit-learn
+```
 
-    git clone https://github.com/chandkund/Iris-Classification.git
-
-    cd Iris-Classification
-
-    pip install -r requirements.txt
 
 ##  Usage
-    import pandas as pd
-    from sklearn.model_selection import train_test_split
-    from sklearn.svm import SVC
-    from sklearn.linear_model import LogisticRegression
-    from sklearn.tree import DecisionTreeClassifier
-    from sklearn.metrics import accuracy_score
-    df = pd.read_csv("Iris.csv")
-    inputs = df.iloc[:, 0:4].values
-    targets = df.iloc[:, 4].values
-    x_train, x_test, y_train, y_test = train_test_split(inputs, targets, test_size=0.2, random_state=11)
-    model_svc = SVC().fit(x_train, y_train)
-    print("SVM Accuracy:", accuracy_score(y_test, model_svc.predict(x_test)) * 100)
-    model_logistic = LogisticRegression().fit(x_train, y_train)
-    print("Logistic Regression Accuracy:", accuracy_score(y_test, model_logistic.predict(x_test)) * 100)
-    model_tree = DecisionTreeClassifier().fit(x_train, y_train)
-    print("Decision Tree Accuracy:", accuracy_score(y_test, model_tree.predict(x_test)) * 100)  
+```python
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.svm import SVC
+from sklearn.linear_model import LogisticRegression
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.metrics import accuracy_score
+```
+- **Load Data**:
+```python
+raw_data = pd.read_csv("Iris.csv")
+df= raw_data.copy()
+```
+- **Feature Selection**:
+```python
+inputs = df.iloc[:, 0:4].values
+targets = df.iloc[:, 4].values
+```
+- **Split  train and test data**:
+```python
+x_train, x_test, y_train, y_test = train_test_split(inputs, targets, test_size=0.2, random_state=11)
+```
+- **Model 1**:
+```python
+model_svc = SVC().fit(x_train, y_train)
+```
+- **Model_1 Evaluation**:
+```python 
+print("SVM Accuracy:", accuracy_score(y_test, model_svc.predict(x_test)) * 100)
+```
+- **Model 2**:
+```python 
+model_logistic = LogisticRegression().fit(x_train, y_train)
+```
+- **Model_2 Evaluation**:
+```python 
+print("Logistic Regression Accuracy:", accuracy_score(y_test, model_logistic.predict(x_test)) * 100)
+```
+- **Model 3**
+```python 
+model_tree = DecisionTreeClassifier().fit(x_train, y_train)
+```
+- **Model_3 Evaluation**:
+```python
+print("Decision Tree Accuracy:", accuracy_score(y_test, model_tree.predict(x_test)) * 100)  
+```
 
 ## Models and Evaluation
 
@@ -56,8 +88,8 @@ The project uses three models: SVM, Logistic Regression, and Decision Tree. Each
   
 ## Results
 
-    SVM Accuracy: 96.66%
-    Logistic Regression Accuracy: 100%
+SVM Accuracy: 96.66%
+Logistic Regression Accuracy: 100%
 
 Decision Tree Accuracy: 100%
 
